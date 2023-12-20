@@ -8,6 +8,11 @@
   <!-- Load Leaflet code library: see https://leafletjs.com/download.html -->
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.2/dist/leaflet.css" integrity="sha256-sA+zWATbFveLLNqWO2gtiw3HL/lh1giY/Inf1BJ0z14=" crossorigin="" />
   <script src="https://unpkg.com/leaflet@1.9.2/dist/leaflet.js" integrity="sha256-o9N1jGDZrf5tS+Ft4gbIK7mYMipq9lqpVJ91xHSyKhg=" crossorigin=""></script>
+  
+  <!-- Load leaflet lists code library: see https://github.com/stefanocudini/leaflet-list-markers -->
+  <link rel="stylesheet" href="./src/leaflet-list-markers.css" />
+  <script src="./src/leaflet-list-markers.js"></script>
+
 
   <!-- Position the map and title with Cascading Style Sheet (CSS) -->
   <style>
@@ -37,13 +42,29 @@
   map.fitBounds(bounds);
 
 
-  /* Pull markets from CSV */
+  /* Add markers */
   L.marker([1293,594]).addTo(map) // EDIT marker coordinates
   .bindPopup("College Gate"); // EDIT pop-up text message
 
   L.marker([1176,1239]).addTo(map) // EDIT marker coordinates
   .bindPopup("King's Gate"); // EDIT pop-up text message
   
+  //inizialize Leaflet List Markers
+	var list = new L.Control.ListMarkers({layer: markersLayer, itemIcon: null});
+	
+	/*
+	list.on('item-mouseover', function(e) {
+		e.layer.setIcon(L.icon({
+			iconUrl: '../images/select-marker.png'
+		}))
+	}).on('item-mouseout', function(e) {
+		e.layer.setIcon(L.icon({
+			iconUrl: L.Icon.Default.imagePath+'/marker-icon.png'
+		}))
+	});
+*/
+	map.addControl( list );
+	
   </script>
 </body>
 </html>
