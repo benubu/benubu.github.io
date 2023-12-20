@@ -50,20 +50,8 @@
   .bindPopup("King's Gate"); // EDIT pop-up text message
   
   //inizialize Leaflet List Markers
-	var list = new L.Control.ListMarkers({layer: markersLayer, itemIcon: null});
-	
-	/*
-	list.on('item-mouseover', function(e) {
-		e.layer.setIcon(L.icon({
-			iconUrl: '../images/select-marker.png'
-		}))
-	}).on('item-mouseout', function(e) {
-		e.layer.setIcon(L.icon({
-			iconUrl: L.Icon.Default.imagePath+'/marker-icon.png'
-		}))
-	});
-*/
-	map.addControl( list );
+	var markersLayer = new L.LayerGroup();
+    map.addControl( new L.Control.ListMarkers({layer: markersLayer}) );
 	
   </script>
 </body>
