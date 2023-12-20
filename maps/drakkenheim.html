@@ -50,16 +50,15 @@
 
 	////////////populate map 
   var pointsOfInterest = (
-    {"name": "College Gate",     "loc":[1293,594]},
-    {"name": "King's Gate",      "loc":[1176,1239]}
+    {"name": "College Gate",     "loc": [1293,594 ]  },
+    {"name": "King's Gate",      "loc": [1176,1239] }
   )
 
-	for(var i in pointsOfInterest)
-		L.marker(L.latLng(pointsOfInterest[i].loc), {pointsOfInterest: pointsOfInterest[i].name}).addTo( markersLayer );
+	for(var i in pointsOfInterest) {
+		L.marker(pointsOfInterest[i].loc).addToMarkersLayer)
+		.bindPopup(pointsOfInterest[i].name)
+   }
 
-	var list = new L.Control.ListMarkers({layer: markersLayer, itemIcon: null});
-
-	//TODO make example using label option with pop fields
 	
   </script>
 </body>
