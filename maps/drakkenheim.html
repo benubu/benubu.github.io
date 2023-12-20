@@ -36,10 +36,15 @@
 
   map.fitBounds(bounds);
 
+  /* Add markers */
 
 
 
+  L.marker([1293,594]).addTo(map) // EDIT marker coordinates
+  .bindPopup("College Gate"); // EDIT pop-up text message
 
+  L.marker([1176,1239]).addTo(map) // EDIT marker coordinates
+  .bindPopup("King's Gate"); // EDIT pop-up text message
   
   </script>
 </body>
