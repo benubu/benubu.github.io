@@ -48,11 +48,10 @@
 
   L.marker([1176,1239]).addTo(map) // EDIT marker coordinates
   .bindPopup("King's Gate"); // EDIT pop-up text message
-  
-  //inizialize Leaflet List Markers
-	var markersLayer = new L.LayerGroup();
-    map.addControl( new L.Control.ListMarkers({layer: markersLayer}) );
-	
+
+   map.addControl( new L.Control.ListMarkers({layer: markersLayer}) );
+
+
   </script>
 </body>
 </html>
