@@ -38,13 +38,15 @@
 
   /* Add markers */
 
+  var pointsOfInterest = (
+    {"name": "College Gate",     "loc": [1293,594 ]  },
+    {"name": "King's Gate",      "loc": [1176,1239]  }
+  )
+
+	for(var i in pointsOfInterest) 
+		L.marker(pointsOfInterest[i].loc).addTo(map).bindPopup(pointsOfInterest[i].name);
 
 
-  L.marker([1293,594]).addTo(map) // EDIT marker coordinates
-  .bindPopup("College Gate"); // EDIT pop-up text message
-
-  L.marker([1176,1239]).addTo(map) // EDIT marker coordinates
-  .bindPopup("King's Gate"); // EDIT pop-up text message
   
   </script>
 </body>
