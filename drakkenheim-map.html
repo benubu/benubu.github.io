@@ -27,14 +27,14 @@
 
   /* Set up the initial map center and zoom level */
   var map = L.map('map', {
-    center: [41.77, -72.69], // EDIT coordinates to re-center map
-    zoom: 12,  // EDIT from 1 (zoomed out) to 18 (zoomed in)
-    scrollWheelZoom: false
+    crs: L.CRS.Simple,
+    minZoom: -5
   });
 
-  /* display basemap tiles -- see others at https://leaflet-extras.github.io/leaflet-providers/preview/ */
-  L.tileLayer(
-    'https://benubu.github.io/media/drakkenheim-map.jpg').addTo(map);
+  var bounds = [[0,0], [1800,1800]];
+  var image = L.imageOverlay('media/drakkenheim_map.jpg', bounds).addTo(map);
+
+  map.fitBounds(bounds);
 
   /* Display a point marker with pop-up text */
   L.marker([41.77, -72.69]).addTo(map) // EDIT marker coordinates
