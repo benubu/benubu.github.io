@@ -36,14 +36,13 @@
   });
 
   var bounds = [[0,0], [1800,1800]];
-  var image = L.imageOverlay('drakkenheim-map.jpg', bounds).addTo(map);
+  var image = L.imageOverlay('./drakkenheim-map.jpg', bounds).addTo(map);
 
   map.fitBounds(bounds);
 
 
-  /* Pull markets from CSV */
 // Read markers data from data.csv
-  $.get('./data.csv', function(csvString) {
+  $.get('./drakkenheim-data.csv', function(csvString) {
 
     // Use PapaParse to convert string to array of objects
     var data = Papa.parse(csvString, {header: true, dynamicTyping: true}).data;
