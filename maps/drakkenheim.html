@@ -55,7 +55,7 @@
   )
 
 	for(var i in pointsOfInterest) {
-		L.marker(pointsOfInterest[i].loc).addTo(MarkersLayer)
+		L.marker(pointsOfInterest[i].loc).addTo(markersLayer)
 		.bindPopup(pointsOfInterest[i].name)
    }
 
