@@ -55,7 +55,7 @@
   )
 
 	for(var i in pointsOfInterest)
-		L.marker(L.latLng(pointsOfInterest[i].loc), {pointsOfInterest: pointsofInterest[i].name}).addTo( markersLayer );
+		L.marker(L.latLng(pointsOfInterest[i].loc), {pointsOfInterest: pointsOfInterest[i].name}).addTo( markersLayer );
 
 	var list = new L.Control.ListMarkers({layer: markersLayer, itemIcon: null});
 
