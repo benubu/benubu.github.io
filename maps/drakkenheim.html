@@ -43,15 +43,22 @@
 
 
   /* Add markers */
-  L.marker([1293,594]).addTo(map) // EDIT marker coordinates
-  .bindPopup("College Gate"); // EDIT pop-up text message
+  var pointsOfInterest = (
+    {"name": "College Gate",     "loc":[1293,594]},
+    {"name": "King's Gate",      "loc":[1176,1239]}
+  ]
 
-  L.marker([1176,1239]).addTo(map) // EDIT marker coordinates
-  .bindPopup("King's Gate"); // EDIT pop-up text message
+var markersLayer = new L.LayerGroup();	//layer contain searched elements
+	map.addLayer(markersLayer);
 
-   map.addControl( new L.Control.ListMarkers({layer: markersLayer}) );
+	////////////populate map from cities-italy.js
+	for(var i in pointsOfInterest)
+		L.marker(L.latLng(pointsOfInterest[i].loc), {pointsOfInterest: cities[i].name}).addTo( markersLayer );
 
+	var list = new L.Control.ListMarkers({layer: markersLayer, itemIcon: null});
 
+	//TODO make example using label option with pop fields
+	
   </script>
 </body>
 </html>
