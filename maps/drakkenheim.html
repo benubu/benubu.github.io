@@ -46,14 +46,11 @@
   ];
 
   for(var i in pointsOfInterest) 
-    L.marker(pointsOfInterest[i].loc).addTo(map)
+    L.marker(pointsOfInterest[i].loc, {title: pointsOfInterest[i].name}).addTo(map)
     .bindPopup(pointsOfInterest[i].name);
    
 	var list = new L.Control.ListMarkers({layer: map, itemIcon: null});
 	map.addControl( list );
-
-
-
   
   </script>
 </body>
